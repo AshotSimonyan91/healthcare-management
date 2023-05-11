@@ -3,18 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <title>Create Doctor</title>
+    <link rel="stylesheet" href="/css/style2.css">
 </head>
 <body>
-<h1>Add Doctor</h1>
-
-<form action="/doctors/add" method="post" enctype="multipart/form-data">
-    <input type="text" name="name" placeholder="Name"><br>
-    <input type="text" name="surname" placeholder="Surname"><br>
-    <input type="email" name="email" placeholder="Email"><br>
-    <input type="text" name="specialty" placeholder="Specialty"><br>
-    <input type="tel" name="phone_number" placeholder="Phone Number"><br>
-    <input type="file" name="profile_pic"><br>
-    <input type="submit" value="Create">
-</form>
+<a class="a2" href="/doctors">Back</a>
+<div class="div4">
+    <div class="center">
+        <h1>Add Doctor</h1>
+        <form action="/doctors/add" method="post" enctype="multipart/form-data">
+            <div class="inputbox">
+                <input type="text" name="name" placeholder="Name">
+            </div>
+            <div class="inputbox">
+                <input type="text" name="surname" placeholder="Surname">
+            </div>
+            <div class="inputbox">
+                <input type="email" name="email" placeholder="Email">
+            </div>
+            <div class="inputbox">
+                <input type="text" name="specialty" placeholder="Specialty">
+            </div>
+            <div class="inputbox">
+                <input type="tel" name="phone_number" placeholder="Phone Number">
+            </div>
+            <div class="inputbox">
+                <input type="file" name="profile_pic">
+            </div>
+            <div class="inputbox">
+                <input type="button" value="Create">
+            </div>
+        </form>
+    </div>
+</div>
 </body>
 </html>

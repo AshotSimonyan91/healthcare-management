@@ -3,35 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <title>Doctors</title>
+    <link rel="stylesheet" href="/css/style.css">
 </head>
-<body>
-<a href="/">Back</a>
-<h1>Doctors</h1>
-<a href="/doctors/add">Add Doctor</a>
-<table border="1px" style="border-collapse: collapse">
-  <tr>
-    <th>ID</th>
-    <th>Name</th>
-    <th>Surname</th>
-    <th>Email</th>
-    <th>Specialty</th>
-    <th>Phone Number</th>
-    <th>Picture</th>
-    <th>Action</th>
-  </tr>
-  <tr th:each="doctor : ${doctors}">
-    <td th:text="${doctor.id}"></td>
-    <td th:text="${doctor.name}"></td>
-    <td th:text="${doctor.surname}"></td>
-    <td th:text="${doctor.email}"></td>
-    <td th:text="${doctor.specialty}"></td>
-    <td th:text="${doctor.phoneNumber}"></td>
-    <td>
-      <img th:if="${doctor.getProfilePic() != null}" th:src="@{/getimage(imageName=${doctor.getProfilePic()})}" width="80">
-      <img th:unless="${doctor.getProfilePic() != null}" src="/doctor.png" width="80">
-    </td>
-    <td><a th:href="@{/doctors/remove(id=${doctor.id})}">Remove</a></td>
-  </tr>
-</table>
+<body class="body1">
+<a class="a2" href="/">Back</a>
+<div class="div3">
+    <h1 class="h2">Doctors</h1>
+    <a class="a1" href="/doctors/add">
+        <button class="button1">Add Doctor</button>
+    </a>
+    <div class="table-wrapper">
+        <table class="fl-table">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Surname</th>
+                <th>Email</th>
+                <th>Specialty</th>
+                <th>Phone Number</th>
+                <th>Picture</th>
+                <th>Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="doctor : ${doctors}">
+                <td th:text="${doctor.id}"></td>
+                <td th:text="${doctor.name}"></td>
+                <td th:text="${doctor.surname}"></td>
+                <td th:text="${doctor.email}"></td>
+                <td th:text="${doctor.specialty}"></td>
+                <td th:text="${doctor.phoneNumber}"></td>
+                <td>
+                    <img th:if="${doctor.getProfilePic() != null}"
+                         th:src="@{/getimage(imageName=${doctor.getProfilePic()})}"
+                         width="80">
+                    <img th:unless="${doctor.getProfilePic() != null}" src="/doctor.png" width="80">
+                </td>
+                <td><a class="a2" th:href="@{/doctors/remove(id=${doctor.id})}">Remove</a></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
 </body>
 </html>

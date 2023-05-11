@@ -3,23 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <title>Create Appointment</title>
+    <link rel="stylesheet" href="/css/style2.css">
 </head>
 <body>
-<h1>Add Appointment</h1>
-
-<form action="/appointments/add" method="post">
-    Patient: <select name="patient.id">
-    <option th:each="patient : ${patients}"
-            th:text="${patient.name}" th:value="${patient.id}">
-    </option>
-</select><br>
-    Doctor: <select name="doctor.id">
-    <option th:each="doctor : ${doctors}"
-            th:text="${doctor.name}" th:value="${doctor.id}">
-    </option>
-</select><br>
-    <input type="datetime-local" name="date">
-    <input type="submit" value="Create">
-</form>
+<a class="a2" href="/appointments">Back</a>
+<div class="div4">
+    <div class="center">
+        <h1>Add Appointment</h1>
+        <form action="/appointments/add" method="post">
+            <div class="inputbox">
+                Patient: <select name="patient.id">
+                <option th:each="patient : ${patients}"
+                        th:text="${patient.name}" th:value="${patient.id}">
+                </option>
+            </select>
+            </div>
+            <div class="inputbox">
+                Doctor: <select name="doctor.id">
+                <option th:each="doctor : ${doctors}"
+                        th:text="${doctor.name}" th:value="${doctor.id}">
+                </option>
+            </select>
+            </div>
+            <div class="inputbox">
+                <input type="datetime-local" name="date">
+            </div>
+            <div class="inputbox">
+                <input type="button" value="Create">
+            </div>
+        </form>
+    </div>
+</div>
 </body>
 </html>
