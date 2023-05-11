@@ -37,11 +37,11 @@
 }
 
 .div2 > a > button {
-    border-radius: 30%;
+    border-radius: 40%;
     border-color: black;
-    width: 150px;
-    height: 50px;
-    background-color: #92beee;
+    width: 200px;
+    height: 70px;
+    background-color: transparent;
     color: #363636;
     font-size: 20px;
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -62,13 +62,14 @@
 }
 
 .button1 {
-    border-radius: 30%;
+    border-radius: 40%;
     border-color: black;
-    width: 80px;
+    width: 130px;
     height: 30px;
-    background-color: #4FC3A1;
-    color: #363636;
-    font-size: 11px;
+    background-color: rgba(79, 195, 161, 0.4);
+    color: #000000;
+    font-size: 12px;
+    font-weight: bold;
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
@@ -217,26 +218,7 @@ body {
     }
 }
 
-
-
-
-
-
-.a2 {
-    color: #4FC3A1;
-    font-family: helvetica;
-    text-decoration: none;
-    text-transform: uppercase;
+.back {
+    width: 50px;
+    filter: invert(100%);
 }
-
-.a2:hover {
-    text-decoration: underline;
-}
-
-.a2:visited {
-    color: purple;
-}
-.a2:active {
-    color: black;
-}
-

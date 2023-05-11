@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body class="body1">
-<a class="a2" href="/">Back</a>
+<a class="a2" href="/"><img class="back" src="/93634.png"></a>
 <div class="div3">
     <h1 class="h2">Appointments</h1>
     <a class="a1" href="/appointments/add"><button class="button1">Add Appointment</button></a>
@@ -27,7 +27,7 @@
                 <td th:text="${#dates.format(appointment.dateTime,'dd-MM-yyyy HH:mm')}"></td>
                 <td th:text="${appointment.patient.name}"></td>
                 <td th:text="${appointment.doctor.name}"></td>
-                <td><a class="a2" th:href="@{/appointments/remove(id=${appointment.id})}">Remove</a></td>
+                <td><a class="a2" th:href="@{/appointments/remove(id=${appointment.id})}"><img style="width: 30px" src="/delete.png"></a></td>
             </tr>
             </tbody>
         </table>
