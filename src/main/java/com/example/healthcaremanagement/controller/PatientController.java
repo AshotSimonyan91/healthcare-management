@@ -44,7 +44,12 @@ public class PatientController {
 
     @PostMapping("add")
     public String addPatient(@ModelAttribute Patient patient, @RequestParam("date") String date) throws ParseException {
-        patient.setDateOfBirthday(new SimpleDateFormat("yyyy-MM-dd").parse(date));
+        String bDate = "01-01-0001";
+        if (date != "") {
+            patient.setDateOfBirthday(new SimpleDateFormat("yyyy-MM-dd").parse(date));
+        } else {
+            patient.setDateOfBirthday(new SimpleDateFormat("yyyy-MM-dd").parse(bDate));
+        }
         patientRepository.save(patient);
         return "redirect:/patients";
     }

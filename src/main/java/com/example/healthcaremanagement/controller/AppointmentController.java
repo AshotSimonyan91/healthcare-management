@@ -35,9 +35,9 @@ public class AppointmentController {
     private PatientRepository patientRepository;
 
     @GetMapping
-    public String appointmentsPage(ModelMap modelMap){
+    public String appointmentsPage(ModelMap modelMap) {
         List<Appointment> all = appointmentRepository.findAll();
-        modelMap.addAttribute("appointments",all);
+        modelMap.addAttribute("appointments", all);
         return "appointments";
     }
 
@@ -51,14 +51,17 @@ public class AppointmentController {
     public String addAppointmentPage(ModelMap modelMap) {
         List<Doctor> doctors = doctorRepository.findAll();
         List<Patient> patients = patientRepository.findAll();
-        modelMap.addAttribute("doctors",doctors);
-        modelMap.addAttribute("patients",patients);
+        modelMap.addAttribute("doctors", doctors);
+        modelMap.addAttribute("patients", patients);
         return "createAppointment";
     }
 
     @PostMapping("add")
     public String addAppointment(@ModelAttribute Appointment appointment, @RequestParam("date") String date) throws ParseException {
-        String dateTime = date.replace("T", " ").concat(":00");
+        String dateTime = "01-01-0001 00:00:00";
+        if (date != "") {
+           dateTime = date.replace("T", " ").concat(":00");
+        }
         appointment.setDateTime(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse(dateTime));
         appointmentRepository.save(appointment);
         return "redirect:/appointments";
