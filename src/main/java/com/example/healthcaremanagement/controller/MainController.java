@@ -19,7 +19,7 @@ import java.io.IOException;
 @Controller
 public class MainController {
 
-    @Value("${healthcare.uploade.image.path}")
+    @Value("${healthcare.upload.image.path}")
     private String imageUploadPath;
 
 
