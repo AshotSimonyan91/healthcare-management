@@ -13,8 +13,6 @@ import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.List;
 
@@ -24,7 +22,6 @@ import java.util.List;
 
 @Controller
 @RequestMapping("/doctors")
-//@SessionAttributes("doctor")
 public class DoctorController {
 
     @Value("${healthcare.upload.image.path}")
@@ -51,13 +48,6 @@ public class DoctorController {
         doctorRepository.deleteById(id);
         return "redirect:/doctors";
     }
-
-
-//    @ModelAttribute("doctor")
-//    public Doctor getDoctor() {
-//        return new Doctor();
-//    }
-
 
     @GetMapping("add")
     public String addDoctorPage(ModelMap modelMap) {
