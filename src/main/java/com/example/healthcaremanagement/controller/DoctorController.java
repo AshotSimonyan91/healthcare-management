@@ -9,7 +9,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
@@ -56,7 +55,7 @@ public class DoctorController {
     }
 
     @PostMapping("add")
-    public String addDoctor(@Valid @ModelAttribute Doctor doctor, Errors errors, @RequestParam("profile_pic") MultipartFile multipartFile, SessionStatus sessionStatus) throws IOException {
+    public String addDoctor(@Valid @ModelAttribute Doctor doctor, Errors errors, @RequestParam("profile_pic") MultipartFile multipartFile) throws IOException {
         if (errors.hasErrors()) {
             return "createDoctor";
         }
@@ -67,7 +66,6 @@ public class DoctorController {
             doctor.setProfilePic(fileName);
         }
         doctorRepository.save(doctor);
-        sessionStatus.setComplete();
         return "redirect:/doctors";
     }
 

@@ -11,8 +11,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.List;
 
 /**
@@ -54,12 +52,7 @@ public class AppointmentController {
     }
 
     @PostMapping("add")
-    public String addAppointment(@ModelAttribute Appointment appointment, @RequestParam("date") String date) throws ParseException {
-        String dateTime = "01-01-0001 00:00:00";
-        if (date != "") {
-           dateTime = date.replace("T", " ").concat(":00");
-        }
-        appointment.setDateTime(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse(dateTime));
+    public String addAppointment(@ModelAttribute Appointment appointment) {
         appointmentRepository.save(appointment);
         return "redirect:/appointments";
     }
