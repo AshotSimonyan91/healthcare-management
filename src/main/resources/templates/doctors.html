@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body class="body1">
-<a class="a2" href="/"><img class="back" src="/93634.png"></a>
+<a class="a2" href="/"><img class="back" src="/image/93634.png"></a>
 <div class="div3">
     <h1 class="h2">Doctors</h1>
     <a class="a1" href="/doctors/add">
@@ -38,9 +38,9 @@
                     <img th:if="${doctor.getProfilePic() != null}"
                          th:src="@{/getimage(imageName=${doctor.getProfilePic()})}"
                          width="80">
-                    <img th:unless="${doctor.getProfilePic() != null}" src="/doctor.png" width="80">
+                    <img th:unless="${doctor.getProfilePic() != null}" src="/image/doctor.png" width="80">
                 </td>
-                <td><a class="a2" th:href="@{/doctors/remove(id=${doctor.id})}"><img style="width: 30px" src="/delete.png"></a></td>
+                <td><a class="a2" th:href="@{/doctors/remove(id=${doctor.id})}"><img style="width: 30px" src="/image/delete.png"></a></td>
             </tr>
             </tbody>
         </table>
