@@ -55,7 +55,9 @@ public class DoctorController {
     }
 
     @PostMapping("add")
-    public String addDoctor(@Valid @ModelAttribute Doctor doctor, Errors errors, @RequestParam("profile_pic") MultipartFile multipartFile) throws IOException {
+    public String addDoctor(@Valid @ModelAttribute Doctor doctor,
+                            Errors errors,
+                            @RequestParam("profile_pic") MultipartFile multipartFile) throws IOException {
         if (errors.hasErrors()) {
             return "createDoctor";
         }

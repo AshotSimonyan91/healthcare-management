@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Create User</title>
+    <link rel="stylesheet" href="/css/style2.css">
+</head>
+<body>
+<a class="a2" href="/"><img class="back" src="/93634.png"></a>
+<div class="div4">
+    <div class="center">
+        <h1>Registration</h1>
+        <form action="/user/register" method="post">
+            <div class="inputbox">
+                <input type="text" name="name" placeholder="Name"><br>
+            </div>
+            <div class="inputbox">
+                <input type="text" name="surname" placeholder="Surname"><br>
+            </div>
+            <div class="inputbox">
+                <input type="text" name="email" placeholder="Email"><br>
+            </div>
+            <div class="inputbox">
+                <input type="password" name="password" placeholder="Password"><br>
+            </div>
+            <div class="inputbox">
+                <input type="submit" value="Create">
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>

@@ -6,6 +6,12 @@
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body class="body1">
+<div th:if="${user != null}">
+    Welcome  <b th:text="${user.name}"></b><br>
+    <a href="/logout">Logout</a>
+</div>
+<a href="/user/register" th:if="${user == null}">Register</a>
+<a href="/login" th:if="${user == null}">Login</a>
 <div class="div1">
     <h1>Be Healthy</h1><br>
     <div class="div2">
